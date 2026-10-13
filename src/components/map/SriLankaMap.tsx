@@ -11,14 +11,10 @@ const ILLUSTRATIVE_MARKERS = [
   { id: 'anuradhapura', lat: 8.3114, lng: 80.4037, label: 'Anuradhapura', description: 'North Central Province — growing digital connectivity.' },
 ]
 
-interface Marker { id: string; lat: number; lng: number; label: string; description: string }
-
 export default function SriLankaMap() {
   const mapRef = useRef<HTMLDivElement>(null)
   const leafletMapRef = useRef<any>(null)
-  const [selectedMarker, setSelectedMarker] = useState<Marker | null>(null)
   const [animated, setAnimated] = useState(true)
-  const [mapLoaded, setMapLoaded] = useState(false)
   const [tileError, setTileError] = useState(false)
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
 
@@ -69,7 +65,7 @@ export default function SriLankaMap() {
           iconAnchor: [8, 8],
         })
 
-        const marker = L.marker([m.lat, m.lng], { icon })
+        L.marker([m.lat, m.lng], { icon })
           .addTo(map)
           .bindPopup(
             `<div style="font-family: Inter, sans-serif; min-width: 160px;">
@@ -81,14 +77,10 @@ export default function SriLankaMap() {
             </div>`,
             { maxWidth: 220 }
           )
-          .on('click', () => setSelectedMarker(m))
-
-        return marker
       })
 
       leafletMapRef.current = map
-      setMapLoaded(true)
-    }).catch(() => setMapLoaded(false))
+    }).catch(() => setTileError(true))
 
     return () => {
       if (leafletMapRef.current) {

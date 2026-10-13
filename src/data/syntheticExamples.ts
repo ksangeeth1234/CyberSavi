@@ -3,7 +3,7 @@
 // Used for "Load Sample" feature. NOT real incidents.
 // ─────────────────────────────────────────────
 
-import { AnalysisInput } from '../types';
+import type { AnalysisInput } from '../types';
 
 export const SYNTHETIC_EXAMPLES: Array<{
   id: string;

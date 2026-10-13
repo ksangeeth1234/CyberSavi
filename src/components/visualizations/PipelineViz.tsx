@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react'
-import { PipelineStage } from '../../types'
+import { useState } from 'react'
+import type { PipelineStage } from '../../types'
 import {
   MessageSquare, ShieldCheck, Globe, AlertTriangle,
   Repeat, BarChart2, Lightbulb, FileText, ChevronDown, ChevronUp, CheckCircle2, Loader2

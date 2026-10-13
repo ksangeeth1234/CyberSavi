@@ -4,8 +4,7 @@
 // based on detected risk, indicators, and user-provided context
 // ─────────────────────────────────────────────
 
-import { Recommendation, RiskCategory, DetectedIndicator } from '../types';
-import { ContextAnalysisResult } from './contextAnalysis';
+import type { Recommendation, RiskCategory, DetectedIndicator } from '../types';
 
 let recIdCounter = 0;
 function makeId(): string { return `rec-${++recIdCounter}`; }
@@ -13,7 +12,6 @@ function makeId(): string { return `rec-${++recIdCounter}`; }
 export function generateRecommendations(
   category: RiskCategory,
   indicators: DetectedIndicator[],
-  context: ContextAnalysisResult,
   platform?: string,
 ): Recommendation[] {
   const recs: Recommendation[] = [];

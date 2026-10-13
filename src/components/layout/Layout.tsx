@@ -1,4 +1,4 @@
-import { Outlet, NavLink, useLocation } from 'react-router-dom'
+import { Outlet, NavLink } from 'react-router-dom'
 import { useState } from 'react'
 import {
   Shield, Menu, X, Home, Search, BarChart3,
@@ -19,8 +19,6 @@ const navItems = [
 export default function Layout() {
   const [mobileOpen, setMobileOpen] = useState(false)
   const isOnline = useOnlineStatus()
-  const location = useLocation()
-
   return (
     <div className="min-h-screen flex flex-col bg-slate-50">
       {/* ── Offline Banner ── */}

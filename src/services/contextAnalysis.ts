@@ -3,7 +3,7 @@
 // Stage 4 of the NLP pipeline — analyzes repetition and escalation
 // ─────────────────────────────────────────────
 
-import { DetectedIndicator } from '../types';
+import type { DetectedIndicator } from '../types';
 import { REPETITION_THRESHOLD, ESCALATION_KEYWORDS } from '../data/lexicons';
 import { detectHarmIndicators } from './harmDetection';
 import { preprocessText } from './textPreprocessing';

@@ -9,8 +9,7 @@ import {
 } from 'recharts'
 import { SYNTHETIC_EXAMPLES } from '../data/syntheticExamples'
 import { runAnalysisPipeline } from '../services/analysisOrchestrator'
-import { RiskCategory, EvaluationSample } from '../types'
-import { INITIAL_STAGES } from '../services/analysisOrchestrator'
+import type { RiskCategory, EvaluationSample } from '../types'
 
 // Synthetic evaluation dataset — clearly labeled as DEMO/FICTIONAL
 const EVAL_SAMPLES: EvaluationSample[] = SYNTHETIC_EXAMPLES.map((ex, i) => ({

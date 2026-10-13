@@ -4,7 +4,7 @@
 // These are research-oriented, rule-based indicators — NOT a trained model
 // ─────────────────────────────────────────────
 
-import { IndicatorCategory } from '../types';
+import type { IndicatorCategory } from '../types';
 
 export interface LexiconEntry {
   pattern: string | RegExp;

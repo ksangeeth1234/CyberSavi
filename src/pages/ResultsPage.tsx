@@ -1,11 +1,11 @@
-import { useLocation, useNavigate, Link } from 'react-router-dom'
+import { useLocation, Link } from 'react-router-dom'
 import { useEffect, useRef, useState } from 'react'
 import {
   AlertTriangle, CheckCircle2, Shield, ChevronDown, ChevronUp,
-  Download, FileText, Printer, Eye, Search, FolderOpen,
+  Download, FileText, Printer, Search, FolderOpen,
   ExternalLink, Check, ArrowRight, Lock, Globe, Info
 } from 'lucide-react'
-import { AnalysisResult, Recommendation } from '../types'
+import type { AnalysisResult, Recommendation } from '../types'
 import { loadAnalysisSession } from '../services/privacyManager'
 import { generatePDF, generatePNG, printReport } from '../services/reportGenerator'
 import { CATEGORY_META } from '../data/lexicons'
@@ -168,7 +168,6 @@ function RecommendationItem({ rec, onToggle }: { rec: Recommendation; onToggle: 
 
 export default function ResultsPage() {
   const location = useLocation()
-  const navigate = useNavigate()
   const reportRef = useRef<HTMLDivElement>(null)
   const [result, setResult] = useState<AnalysisResult | null>(
     (location.state as any)?.result ?? null

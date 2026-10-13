@@ -4,7 +4,7 @@
 // All processing is local — no messages are sent to remote services
 // ─────────────────────────────────────────────
 
-import { AnalysisInput, AnalysisResult, PipelineStage } from '../types';
+import type { AnalysisInput, AnalysisResult, PipelineStage } from '../types';
 import { preprocessText } from './textPreprocessing';
 import { detectLanguage } from './languageDetection';
 import { detectHarmIndicators } from './harmDetection';
@@ -34,8 +34,6 @@ export async function runAnalysisPipeline(
   onStageUpdate: StageCallback,
 ): Promise<AnalysisResult> {
   const stages: PipelineStage[] = INITIAL_STAGES.map(s => ({ ...s }));
-  const startTime = Date.now();
-
   function update(idx: number, status: PipelineStage['status'], detail?: string) {
     stages[idx] = { ...stages[idx], status, detail };
     onStageUpdate([...stages]);
@@ -84,7 +82,6 @@ export async function runAnalysisPipeline(
   const recommendations = generateRecommendations(
     riskAssessment.category,
     indicators,
-    context,
     input.platform,
   );
   update(6, 'complete', `${recommendations.length} recommendation(s) generated.`);

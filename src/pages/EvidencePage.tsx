@@ -2,9 +2,9 @@ import { useState, useRef } from 'react'
 import { useLocation } from 'react-router-dom'
 import {
   FolderOpen, Plus, Trash2, FileText, Image, StickyNote,
-  X, Download, Hash, AlertCircle, Info, Eye, EyeOff, Check
+  X, Download, Hash, AlertCircle, Info, Eye, EyeOff
 } from 'lucide-react'
-import { EvidenceItem, AnalysisResult } from '../types'
+import type { EvidenceItem, AnalysisResult } from '../types'
 import { saveEvidence, loadEvidence, generateChecksum } from '../services/privacyManager'
 import { generatePDF } from '../services/reportGenerator'
 

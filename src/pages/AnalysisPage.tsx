@@ -4,11 +4,10 @@ import {
   Search, X, RotateCcw, Lock, Globe, ChevronDown, AlertCircle,
   Loader2, Plus, Trash2
 } from 'lucide-react'
-import { AnalysisInput, DetectedLanguage } from '../types'
+import type { AnalysisInput, DetectedLanguage, PipelineStage } from '../types'
 import { SYNTHETIC_EXAMPLES } from '../data/syntheticExamples'
 import { runAnalysisPipeline, INITIAL_STAGES } from '../services/analysisOrchestrator'
 import { saveAnalysisSession } from '../services/privacyManager'
-import { PipelineStage } from '../types'
 import PipelineViz from '../components/visualizations/PipelineViz'
 
 const LANGUAGE_OPTIONS: { value: DetectedLanguage | 'auto'; label: string }[] = [

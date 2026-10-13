@@ -6,7 +6,7 @@
 
 import jsPDF from 'jspdf';
 import { toPng } from 'html-to-image';
-import { AnalysisResult, EvidenceItem, Recommendation } from '../types';
+import type { AnalysisResult, EvidenceItem, Recommendation } from '../types';
 
 export interface ReportOptions {
   incidentReference?: string;

@@ -3,7 +3,7 @@
 // Manages local data — no remote storage
 // ─────────────────────────────────────────────
 
-import { AnalysisResult, EvidenceItem } from '../types';
+import type { AnalysisResult, EvidenceItem } from '../types';
 
 const STORAGE_KEY_EVIDENCE = 'safespace_lk_evidence';
 const STORAGE_KEY_ANALYSIS = 'safespace_lk_last_analysis';

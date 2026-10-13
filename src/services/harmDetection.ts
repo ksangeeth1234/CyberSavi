@@ -4,7 +4,7 @@
 // Uses rule-based lexicon matching with transparent indicators
 // ─────────────────────────────────────────────
 
-import { DetectedIndicator } from '../types';
+import type { DetectedIndicator } from '../types';
 import { ALL_LEXICONS } from '../data/lexicons';
 import { extractExcerpt } from './textPreprocessing';
 

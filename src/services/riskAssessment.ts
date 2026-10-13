@@ -4,8 +4,8 @@
 // Explainable, rule-based — does NOT produce statistical probabilities
 // ─────────────────────────────────────────────
 
-import { DetectedIndicator, RiskAssessment, RiskCategory } from '../types';
-import { ContextAnalysisResult } from './contextAnalysis';
+import type { DetectedIndicator, RiskAssessment, RiskCategory } from '../types';
+import type { ContextAnalysisResult } from './contextAnalysis';
 
 /**
  * Compute a transparent, explainable risk assessment.
@@ -128,7 +128,7 @@ function buildLimitations(
     'False positives are possible — friendly banter, jokes, or reclaimed language may be misclassified.',
     'False negatives are also possible — harmful behaviour may not always be visible in the language alone.',
   ];
-  if (indicators.some(i => ['singlish', 'si'].includes('si'))) {
+  if (indicators.length > 0) {
     limitations.push('Sinhala and Singlish lexicon coverage is limited. The system may miss culturally specific expressions.');
   }
   if (!context.hasMultipleMessages) {

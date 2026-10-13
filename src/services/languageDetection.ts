@@ -3,7 +3,7 @@
 // Stage 2 of the NLP pipeline — client-side only
 // ─────────────────────────────────────────────
 
-import { DetectedLanguage, LanguageAnalysis } from '../types';
+import type { DetectedLanguage, LanguageAnalysis } from '../types';
 import { hasSinhalaScript, hasLatinScript, hasSinglishPatterns } from './textPreprocessing';
 
 /**
